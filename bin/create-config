@@ -115,18 +115,18 @@ function getMysqlConfig(connectionUrl) {
   var dbUser = dbAuth[0];
   var dbPassword = dbAuth[1];
 
-  if (dbConfig.pathname == null) {
-    var dbName = 'ghost';
-  } else {
-    var dbName = dbConfig.pathname.split('/')[1];
-  }
+  // if (dbConfig.pathname == null) {
+  //   var dbName = 'ghost';
+  // } else {
+  //   var dbName = 'blog'
+  // }
 
   var dbConnection = {
     host: dbConfig.hostname,
     port: dbConfig.port || '3306',
     user: dbUser,
     password: dbPassword,
-    database: dbName,
+    database: 'blog',
     ssl: { rejectUnauthorized: false }
   };
 
