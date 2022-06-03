@@ -8,4 +8,6 @@ cat "config.production.json"
 
 bin/wait-for-db
 
+mv overrides/database.js node_modules/knex-migrator/main/lib/database.js
+
 knex-migrator init --mgpath node_modules/ghost
