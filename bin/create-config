@@ -116,9 +116,10 @@ function getMysqlConfig(connectionUrl) {
   var dbPassword = dbAuth[1];
 
   if (dbConfig.pathname == null) {
-    var dbName = 'ghost';
+    var dbName = 'blog';
   } else {
-    var dbName = dbConfig.pathname.split('/')[1];
+    // var dbName = dbConfig.pathname.split('/')[1];
+    var dbName = "blog";
   }
 
   var dbConnection = {
