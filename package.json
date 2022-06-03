@@ -17,6 +17,7 @@
     "ghost-storage-adapter-s3": "^2.8.0",
     "ghost-storage-cloudinary": "^2.0.2",
     "ghost-webdav-storage-adapter": "^0.3.5",
+    "knex-migrator": "^5.0.0",
     "liebling": "github:snathjr/liebling",
     "london": "github:tryghost/london#1.0.0",
     "lyra": "github:tryghost/lyra",
