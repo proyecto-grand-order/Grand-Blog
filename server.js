@@ -3,10 +3,8 @@ var express = require("express");
 var urlService = require("./node_modules/ghost/core/frontend/services/url");
 var parentApp = express();
 
-// Run a single Ghost process
 ghost()
   .then(function(ghostServer) {
-    // for making subdir work
     parentApp.use(urlService.utils.getSubdir(), ghostServer.rootApp);
     ghostServer.start(parentApp);
   })

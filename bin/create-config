@@ -1,6 +1,4 @@
 #!/usr/bin/env node
-// Ghost Configuration for Heroku
-
 var fs = require('fs');
 var path = require('path');
 var url = require('url');
@@ -25,11 +23,7 @@ function createConfig() {
     }
   } else if (!!process.env.WEBDAV_SERVER_URL){
     fileStorage = true
-    storage = {
-      'active': 'webdav',
-      // no need to set configs; they're set directly from
-      // the environment variables.
-    }
+    storage = { 'active': 'webdav' }
   } else if (!!process.env.BUCKETEER_AWS_ACCESS_KEY_ID) {
     fileStorage = true
     storage = {
@@ -105,11 +99,13 @@ function createConfig() {
 }
 
 function getMysqlConfig(connectionUrl) {
+  
   if (connectionUrl == null) {
     return {};
   }
 
   var dbConfig = url.parse(connectionUrl);
+
   if (dbConfig == null) {
     return {};
   }
@@ -131,6 +127,7 @@ function getMysqlConfig(connectionUrl) {
     password: dbPassword,
     database: dbName
   };
+
   return dbConnection;
 }
 

@@ -8,6 +8,7 @@ pingDatabaseUntilConnected();
 
 function pingDatabaseUntilConnected() {
   var connection = mysql.createConnection(envValues.mysqlDatabaseUrl);
+  
   connection.query('SELECT 1', function (error, results, fields) {
     if (error) {
       console.error(`Database not yet available: ${error.message}`);
@@ -18,4 +19,5 @@ function pingDatabaseUntilConnected() {
       process.exit(0);
     }
   });
+  
 }
