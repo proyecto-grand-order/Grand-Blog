@@ -84,7 +84,10 @@ function createConfig() {
       client: 'mysql',
       connection: getMysqlConfig(envValues.mysqlDatabaseUrl),
       pool: { min: 0, max: 5 },
-      debug: false
+      debug: false,
+      ssl: {
+        ca: fs.readFileSync(path.join(appRoot, 'config/ssl/ghost-ca.pem'))
+      }
     },
     server: {
       host: '0.0.0.0',
