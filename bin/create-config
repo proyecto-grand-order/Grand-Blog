@@ -126,8 +126,7 @@ function getMysqlConfig(connectionUrl) {
     port: dbConfig.port || '3306',
     user: dbUser,
     password: dbPassword,
-    database: 'blog',
-    ssl: { rejectUnauthorized: false }
+    database: 'Dc0vAK7Ame'
   };
 
   return dbConnection;
